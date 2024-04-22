@@ -44,8 +44,6 @@ export class AppComponent {
       this.passwordStrength = 0
     }
 
-    console.log(this.passwordStrength);
-
     this.password = generate({
       length: this.characterLength,
       uppercase: this.uppercase,
