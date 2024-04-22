@@ -1,0 +1,48 @@
+<main class="main">
+    <section class="container">
+        <div>     
+            <h1 class="heading">Password Generator</h1>   
+        </div>   
+        <div class="password__input-container">     
+            <input class="password__input" type="password" placeholder="P4$5W0rD!" [(ngModel)]="password"/>  
+            <ng-icon class="duplicate__icon" name="heroDocumentDuplicate" size="30px" color="hsl(133, 100%, 88%)" (click)="copyPassword()"></ng-icon>
+        </div>   
+        <div class="password__select">    
+            <form class="form">
+                <label class="character__input">
+                    <div class="character__input_heading">
+                        <p>Character Length</p>
+                        <span class="character__num">{{ characterLength }}</span>
+                    </div>
+                    <input type="range" name="lenght" id="" min="0" max="30" [(ngModel)]="characterLength">
+                </label>
+                <label class="checkbox__inputs">
+                    <input type="checkbox" [(ngModel)]="uppercase" name="uppercase"/>
+                    <p>Include Uppercase Letters</p>
+                </label>
+                <label class="checkbox__inputs">
+                    <input type="checkbox" [(ngModel)]="lowercase"  name="lowercase"/>
+                    <p>Include Lowercase Letters</p>
+                </label>
+                <label class="checkbox__inputs">
+                    <input type="checkbox" [(ngModel)]="numbers"  name="numbers"/>
+                    <p>Include Numbers</p>
+                </label>
+                <label class="checkbox__inputs">
+                    <input type="checkbox" [(ngModel)]="symbols" name="symbols"/>
+                    <p>Include Symbols</p>
+                </label>
+            </form>
+            <div class="strength">
+                <p>STRENGTH</p>
+                <div  class="strength__bar">
+                    <div class="strength__bar_item" [ngClass]="passwordStrength > 0 ? 'active' : ''"></div>
+                    <div class="strength__bar_item" [ngClass]="passwordStrength > 1 ? 'active' : ''"></div>
+                    <div class="strength__bar_item" [ngClass]="passwordStrength > 2 ? 'active' : ''"></div>
+                    <div class="strength__bar_item" [ngClass]="passwordStrength > 3 ? 'active' : ''"></div>
+                </div>
+            </div>
+            <button type="button" class="generate" size="16px" color="hsl(128, 100%, 5%)" (click)="generatePassword()">GENERATE <ng-icon name="heroArrowRight"></ng-icon></button>
+        </div>
+    </section>
+ </main>
