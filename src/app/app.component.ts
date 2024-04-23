@@ -25,16 +25,16 @@ export class AppComponent {
   generatePassword() {
     this.passwordStrength = 0;
 
-    if(this.uppercase === true) {
+    if(this.uppercase) {
       this.passwordStrength++
     }
-    if(this.lowercase === true) {
+    if(this.lowercase) {
       this.passwordStrength++
     }
-    if(this.numbers === true) {
+    if(this.numbers) {
       this.passwordStrength++
     }
-    if(this.symbols === true) {
+    if(this.symbols) {
       this.passwordStrength++
     }
     if(this.characterLength < 12) {
